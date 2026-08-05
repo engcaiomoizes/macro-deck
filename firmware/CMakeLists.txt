@@ -13,7 +13,9 @@ pico_sdk_init()
 
 add_executable(macro_deck
     src/main.cpp
-    src/application.cpp
+    src/app/application.cpp
+    src/hal/gpio.cpp
+    src/devices/led.cpp
 )
 
 target_include_directories(macro_deck PRIVATE
