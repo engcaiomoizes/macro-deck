@@ -1,0 +1,27 @@
+# Build
+**/build/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+Makefile
+
+# Pico SDK (caso use como submódulo, remova esta linha)
+firmware/pico-sdk/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# CLion
+.idea/
+
+# Linux
+*~
+.DS_Store
