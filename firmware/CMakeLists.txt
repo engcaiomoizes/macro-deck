@@ -15,6 +15,7 @@ add_executable(macro_deck
     src/main.cpp
     src/app/application.cpp
     src/hal/gpio.cpp
+    src/hal/timer.cpp
     src/devices/led.cpp
 )
 
