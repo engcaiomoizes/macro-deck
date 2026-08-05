@@ -8,11 +8,17 @@ namespace hal {
         Output
     };
 
+    enum class Pull {
+        None,
+        Up,
+        Down
+    };
+
     class Gpio {
         public:
             explicit Gpio(uint pin);
 
-            void initialize(Direction direction);
+            void initialize(Direction direction, Pull pull = Pull::None);
 
             void set(bool value);
             bool read() const;
