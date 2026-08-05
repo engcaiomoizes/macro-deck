@@ -17,6 +17,7 @@ add_executable(macro_deck
     src/hal/gpio.cpp
     src/hal/timer.cpp
     src/devices/led.cpp
+    src/devices/button.cpp
 )
 
 target_include_directories(macro_deck PRIVATE

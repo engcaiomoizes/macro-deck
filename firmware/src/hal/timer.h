@@ -8,10 +8,11 @@ namespace hal {
             Timer(uint32_t intervalMs);
 
             bool poll();
+
+            void restart();
         
         private:
             bool expired();
-            void restart();
             
             uint32_t m_interval;
             uint32_t m_lastTime;
