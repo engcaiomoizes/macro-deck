@@ -22,6 +22,7 @@ add_executable(macro_deck
     src/hal/digital_output.cpp
     src/devices/led.cpp
     src/devices/button.cpp
+    src/keyboard/keyboard_matrix.cpp
 )
 
 target_include_directories(macro_deck PRIVATE
