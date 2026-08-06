@@ -19,6 +19,10 @@ namespace usb {
                 const Keycodes& keycodes
             );
 
+            bool sendConsumerReport(uint16_t usageCode);
+
             bool releaseKeys();
+            
+            bool releaseConsumerReport();
     };
 }

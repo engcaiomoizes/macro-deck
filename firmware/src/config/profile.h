@@ -3,26 +3,26 @@
 #include <array>
 #include <cstddef>
 
-#include "config/key_binding.h"
+#include "actions/action.h"
 
 namespace config {
     class Profile {
         public:
             static constexpr std::size_t KeyCount = 10;
 
-            using Keymap = std::array<KeyBinding, KeyCount>;
+            using ActionMap = std::array<actions::Action, KeyCount>;
 
-            explicit Profile(const Keymap& keymap) : m_keymap(keymap) {}
+            explicit Profile(const ActionMap& actions) : m_actions(actions) {}
 
-            const KeyBinding& binding(std::size_t keyIndex) const {
-                return m_keymap[keyIndex];
+            const actions::Action& action(std::size_t keyIndex) const {
+                return m_actions[keyIndex];
             }
 
-            const Keymap& keymap() const {
-                return m_keymap;
+            const ActionMap& actions() const {
+                return m_actions;
             }
         
         private:
-            Keymap m_keymap;
+            ActionMap m_actions;
     };
 }

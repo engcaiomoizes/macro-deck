@@ -32,6 +32,16 @@ namespace usb {
         );
     }
 
+    bool UsbDevice::sendConsumerReport(uint16_t usageCode) {
+        if (!tud_hid_ready()) return false;
+
+        return tud_hid_report(
+            REPORT_ID_CONSUMER,
+            &usageCode,
+            sizeof(usageCode)
+        );
+    }
+
     bool UsbDevice::releaseKeys() {
         if (!tud_hid_ready()) return false;
 
@@ -40,6 +50,10 @@ namespace usb {
             0,
             nullptr
         );
+    }
+
+    bool UsbDevice::releaseConsumerReport() {
+        return sendConsumerReport(0);
     }
 }
 

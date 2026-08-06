@@ -9,11 +9,6 @@
 #include "config/profile.h"
 
 namespace keyboard {
-    struct KeyBinding {
-        uint8_t keycode;
-        uint8_t modifiers;
-    };
-
     class KeyboardController {
         public:
             KeyboardController(
@@ -32,6 +27,11 @@ namespace keyboard {
 
             bool m_reportPending;
 
+            bool m_consumerReportPending;
+            uint16_t m_activeConsumerUsage;
+
             void sendCurrentState();
+
+            void updateConsumerActions();
     };
 }

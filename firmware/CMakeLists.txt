@@ -27,6 +27,7 @@ add_executable(macro_deck
     src/usb/usb_device.cpp
     src/usb/usb_descriptors.c
     src/config/default_profile.cpp
+    src/actions/action.cpp
 )
 
 target_include_directories(macro_deck PRIVATE

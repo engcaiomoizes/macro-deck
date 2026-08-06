@@ -16,6 +16,10 @@ static uint8_t const hid_report_descriptor[] =
 {
     TUD_HID_REPORT_DESC_KEYBOARD(
         HID_REPORT_ID(REPORT_ID_KEYBOARD)
+    ),
+
+    TUD_HID_REPORT_DESC_CONSUMER(
+        HID_REPORT_ID(REPORT_ID_CONSUMER)
     )
 };
 
