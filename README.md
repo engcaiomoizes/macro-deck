@@ -106,13 +106,16 @@ Transformar o dispositivo em um teclado USB totalmente funcional.
 
 ### Etapas
 
-- [ ] Configurar TinyUSB
-- [ ] Criar USB Descriptors
-- [ ] Inicializar USB
-- [ ] Enumerar como teclado HID
-- [ ] Enviar tecla de teste
-- [ ] Integrar KeyboardMatrix
-- [ ] Suporte a múltiplas teclas (NKRO futuramente)
+- [x] Configurar TinyUSB
+- [x] Criar USB Descriptors
+- [x] Inicializar USB
+- [x] Enumerar como teclado HID
+- [x] Enviar relatórios de pressionamento
+- [x] Enviar relatórios de liberação
+- [x] Integrar a matriz de teclas (KeyboardMatrix)
+- [x] Suporte a múltiplas teclas com 6KRO
+- [x] Criar perfil padrão independente da aplicação
+- [ ] NKRO - melhoria futura
 
 ---
 
