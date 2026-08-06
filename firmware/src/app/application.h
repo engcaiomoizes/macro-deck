@@ -1,7 +1,7 @@
 #pragma once
 
 #include "devices/led.h"
-#include "hal/timer.h"
+#include "hal/periodic_timer.h"
 
 
 class Application {
@@ -15,5 +15,5 @@ class Application {
     private:
         devices::Led m_statusLed;
 
-        hal::Timer m_blinkTimer;
+        hal::PeriodicTimer m_blinkTimer;
 };

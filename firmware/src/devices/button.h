@@ -2,8 +2,8 @@
 
 #include <stdint.h>
 
-#include "hal/gpio.h"
-#include "hal/timer.h"
+#include "hal/digital_input.h"
+#include "hal/one_shot_timer.h"
 
 namespace devices {
     enum class ButtonEvent {
@@ -25,9 +25,9 @@ namespace devices {
             ButtonEvent event() const;
         
         private:
-            hal::Gpio m_gpio;
+            hal::DigitalInput m_input;
 
-            hal::Timer m_debounceTimer;
+            hal::OneShotTimer m_debounceTimer;
 
             bool m_currentState;
             // bool m_previousState;

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "hal/gpio.h"
+#include "hal/digital_output.h"
 
 namespace devices {
     class Led {
@@ -14,6 +14,6 @@ namespace devices {
             void toggle();
         
         private:
-            hal::Gpio m_gpio;
+            hal::DigitalOutput m_output;
     };
 }

@@ -1,21 +1,21 @@
 #include "devices/led.h"
 
 namespace devices {
-    Led::Led(uint pin) : m_gpio(pin) {}
+    Led::Led(uint pin) : m_output(pin) {}
 
     void Led::initialize() {
-        m_gpio.initialize(hal::Direction::Output);
+        m_output.initialize(false);
     }
 
     void Led::on() {
-        m_gpio.set(true);
+        m_output.on();
     }
 
     void Led::off() {
-        m_gpio.set(false);
+        m_output.off();
     }
 
     void Led::toggle() {
-        m_gpio.toggle();
+        m_output.toggle();
     }
 }

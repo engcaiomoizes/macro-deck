@@ -15,7 +15,11 @@ add_executable(macro_deck
     src/main.cpp
     src/app/application.cpp
     src/hal/gpio.cpp
-    src/hal/timer.cpp
+    src/hal/periodic_timer.cpp
+    src/hal/one_shot_timer.cpp
+    src/hal/clock.cpp
+    src/hal/digital_input.cpp
+    src/hal/digital_output.cpp
     src/devices/led.cpp
     src/devices/button.cpp
 )

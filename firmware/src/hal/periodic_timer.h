@@ -3,18 +3,18 @@
 #include <stdint.h>
 
 namespace hal {
-    class Timer {
+    class PeriodicTimer {
         public:
-            Timer(uint32_t intervalMs);
+            explicit PeriodicTimer(uint32_t intervalMs);
 
             bool poll();
 
             void restart();
-        
+
         private:
-            bool expired();
-            
+            bool expired() const;
+
             uint32_t m_interval;
-            uint32_t m_lastTime;
+            uint64_t m_lastTime;
     };
 }
