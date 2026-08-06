@@ -3,6 +3,7 @@
 #include "devices/led.h"
 #include "hal/periodic_timer.h"
 #include "keyboard/keyboard_matrix.h"
+#include "keyboard/keyboard_controller.h"
 #include "usb/usb_device.h"
 
 class Application {
@@ -19,4 +20,6 @@ class Application {
 
         keyboard::KeyboardMatrix m_keyboardMatrix;
         usb::UsbDevice m_usb;
+
+        keyboard::KeyboardController m_keyboardController;
 };

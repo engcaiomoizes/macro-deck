@@ -23,6 +23,7 @@ add_executable(macro_deck
     src/devices/led.cpp
     src/devices/button.cpp
     src/keyboard/keyboard_matrix.cpp
+    src/keyboard/keyboard_controller.cpp
     src/usb/usb_device.cpp
     src/usb/usb_descriptors.c
 )

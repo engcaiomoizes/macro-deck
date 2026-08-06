@@ -17,25 +17,16 @@ namespace usb {
         return tud_mounted();
     }
 
-    bool UsbDevice::sendKey(
-        uint8_t keycode,
-        uint8_t modifiers
+    bool UsbDevice::sendKeyboardReport(
+        uint8_t modifiers,
+        const Keycodes& keycodes
     ) {
         if (!tud_hid_ready()) return false;
-
-        uint8_t keycodes[8] = {
-            keycode,
-            0,
-            0,
-            0,
-            0,
-            0
-        };
 
         return tud_hid_keyboard_report(
             ReportId,
             modifiers,
-            keycodes
+            keycodes.data()
         );
     }
 
