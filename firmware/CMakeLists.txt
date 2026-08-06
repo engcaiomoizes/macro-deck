@@ -26,6 +26,7 @@ add_executable(macro_deck
     src/keyboard/keyboard_controller.cpp
     src/usb/usb_device.cpp
     src/usb/usb_descriptors.c
+    src/config/default_profile.cpp
 )
 
 target_include_directories(macro_deck PRIVATE

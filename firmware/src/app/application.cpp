@@ -1,7 +1,8 @@
 #include "application.h"
 
 #include "pico/stdlib.h"
-#include "tusb.h"
+
+#include "config/default_profile.h"
 
 Application::Application() 
     : m_statusLed(PICO_DEFAULT_LED_PIN),
@@ -14,18 +15,7 @@ Application::Application()
     m_keyboardController(
         m_keyboardMatrix,
         m_usb,
-        keyboard::KeyboardController::Keymap{
-            keyboard::KeyBinding{HID_KEY_A, 0},
-            keyboard::KeyBinding{HID_KEY_B, 0},
-            keyboard::KeyBinding{HID_KEY_C, 0},
-            keyboard::KeyBinding{HID_KEY_D, 0},
-            keyboard::KeyBinding{HID_KEY_E, 0},
-            keyboard::KeyBinding{HID_KEY_F, 0},
-            keyboard::KeyBinding{HID_KEY_G, 0},
-            keyboard::KeyBinding{HID_KEY_H, 0},
-            keyboard::KeyBinding{HID_KEY_I, 0},
-            keyboard::KeyBinding{HID_KEY_J, 0}
-        }
+        config::defaultProfile()
     ) {}
 
 void Application::initialize() {

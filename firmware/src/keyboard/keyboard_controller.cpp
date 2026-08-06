@@ -4,10 +4,10 @@ namespace keyboard {
     KeyboardController::KeyboardController(
         KeyboardMatrix& matrix,
         usb::UsbDevice& usbDevice,
-        const Keymap& keymap
+        const config::Profile& profile
     ) : m_matrix(matrix),
         m_usbDevice(usbDevice),
-        m_keymap(keymap),
+        m_profile(profile),
         m_reportPending(true) {}
     
     void KeyboardController::update() {
@@ -30,7 +30,7 @@ namespace keyboard {
         for (std::size_t keyIndex = 0; keyIndex < KeyboardMatrix::KeyCount; ++keyIndex) {
             if (!m_matrix.isPressed(keyIndex)) continue;
 
-            const KeyBinding& binding = m_keymap[keyIndex];
+            const config::KeyBinding& binding = m_profile.binding(keyIndex);
 
             modifiers |= binding.modifiers;
 

@@ -6,6 +6,7 @@
 
 #include "keyboard/keyboard_matrix.h"
 #include "usb/usb_device.h"
+#include "config/profile.h"
 
 namespace keyboard {
     struct KeyBinding {
@@ -15,12 +16,10 @@ namespace keyboard {
 
     class KeyboardController {
         public:
-            using Keymap = std::array<KeyBinding, KeyboardMatrix::KeyCount>;
-
             KeyboardController(
                 KeyboardMatrix& matrix,
                 usb::UsbDevice& usbDevice,
-                const Keymap& keymap
+                const config::Profile& profile
             );
 
             void update();
@@ -28,7 +27,8 @@ namespace keyboard {
         private:
             KeyboardMatrix& m_matrix;
             usb::UsbDevice& m_usbDevice;
-            Keymap m_keymap;
+            
+            const config::Profile& m_profile;
 
             bool m_reportPending;
 

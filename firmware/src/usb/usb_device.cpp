@@ -3,6 +3,8 @@
 #include "bsp/board_api.h"
 #include "tusb.h"
 
+#include "usb/usb_descriptors.h"
+
 namespace usb {
     void UsbDevice::initialize() {
         board_init();
@@ -24,7 +26,7 @@ namespace usb {
         if (!tud_hid_ready()) return false;
 
         return tud_hid_keyboard_report(
-            ReportId,
+            REPORT_ID_KEYBOARD,
             modifiers,
             keycodes.data()
         );
@@ -34,7 +36,7 @@ namespace usb {
         if (!tud_hid_ready()) return false;
 
         return tud_hid_keyboard_report(
-            ReportId,
+            REPORT_ID_KEYBOARD,
             0,
             nullptr
         );

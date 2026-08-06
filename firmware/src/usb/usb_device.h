@@ -20,8 +20,5 @@ namespace usb {
             );
 
             bool releaseKeys();
-        
-        private:
-            static constexpr uint8_t ReportId = 1;
     };
 }
