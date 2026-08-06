@@ -3,6 +3,7 @@
 #include "devices/led.h"
 #include "hal/periodic_timer.h"
 #include "keyboard/keyboard_matrix.h"
+#include "usb/usb_device.h"
 
 class Application {
     public:
@@ -17,4 +18,5 @@ class Application {
         hal::PeriodicTimer m_blinkTimer;
 
         keyboard::KeyboardMatrix m_keyboardMatrix;
+        usb::UsbDevice m_usb;
 };

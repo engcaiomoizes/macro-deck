@@ -13,9 +13,11 @@ Application::Application()
 void Application::initialize() {
     m_statusLed.initialize();
     m_keyboardMatrix.initialize();
+    m_usb.initialize();
 }
 
 void Application::update() {
+    m_usb.update();
     m_keyboardMatrix.scan();
 
     if (m_blinkTimer.poll()) {

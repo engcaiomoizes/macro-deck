@@ -23,6 +23,8 @@ add_executable(macro_deck
     src/devices/led.cpp
     src/devices/button.cpp
     src/keyboard/keyboard_matrix.cpp
+    src/usb/usb_device.cpp
+    src/usb/usb_descriptors.c
 )
 
 target_include_directories(macro_deck PRIVATE
@@ -31,6 +33,8 @@ target_include_directories(macro_deck PRIVATE
 
 target_link_libraries(macro_deck
     pico_stdlib
+    tinyusb_device
+    tinyusb_board
 )
 
 pico_add_extra_outputs(macro_deck)
