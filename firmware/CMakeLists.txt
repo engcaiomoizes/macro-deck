@@ -20,6 +20,7 @@ add_executable(macro_deck
     src/hal/clock.cpp
     src/hal/digital_input.cpp
     src/hal/digital_output.cpp
+    src/hal/pwm_output.cpp
     src/devices/led.cpp
     src/devices/button.cpp
     src/keyboard/keyboard_matrix.cpp
@@ -28,6 +29,13 @@ add_executable(macro_deck
     src/usb/usb_descriptors.c
     src/config/default_profile.cpp
     src/actions/action.cpp
+    src/actions/action_engine.cpp
+    src/leds/led_controller.cpp
+    src/leds/led_effect_engine.cpp
+    src/leds/effects/static_effect.cpp
+    src/leds/effects/chase_effect.cpp
+    src/leds/effects/blink_effect.cpp
+    src/leds/effects/wave_effect.cpp
 )
 
 target_include_directories(macro_deck PRIVATE
@@ -36,6 +44,7 @@ target_include_directories(macro_deck PRIVATE
 
 target_link_libraries(macro_deck
     pico_stdlib
+    hardware_pwm
     tinyusb_device
     tinyusb_board
 )

@@ -1,10 +1,10 @@
 #include "devices/led.h"
 
 namespace devices {
-    Led::Led(uint pin) : m_output(pin) {}
+    Led::Led(uint32_t pin) : m_output(pin) {}
 
     void Led::initialize() {
-        m_output.initialize(false);
+        m_output.initialize();
     }
 
     void Led::on() {
@@ -16,6 +16,18 @@ namespace devices {
     }
 
     void Led::toggle() {
-        m_output.toggle();
+        if (m_output.brightness() > 0) {
+            off();
+        } else {
+            on();
+        }
+    }
+
+    void Led::setBrightness(uint8_t brightness) {
+        m_output.setBrightness(brightness);
+    }
+
+    uint8_t Led::brightness() const {
+        return m_output.brightness();
     }
 }
